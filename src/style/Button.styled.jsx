@@ -9,6 +9,7 @@ export const Button = styled.button`
   outline: none;
   cursor: pointer;
   transition: background-color .3s ease-in-out;
+  font-weight: 600;
 
   &:hover {
     background-color: var(--clr-orange-hover)
