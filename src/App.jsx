@@ -5,6 +5,7 @@ import Cart from './components/cart';
 import Home from './components/home';
 import Nav from './components/nav';
 
+
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,6 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/account" element={<Account />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
-
           </Routes>
       </BrowserRouter>
     </div>
