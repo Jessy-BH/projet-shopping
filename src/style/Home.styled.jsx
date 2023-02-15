@@ -41,12 +41,6 @@ export const Form = styled.form`
   width: fit-content;
 `
 
-export const Label = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`
-
 export const Title = styled.h2`
   font-weight: 600;
 `

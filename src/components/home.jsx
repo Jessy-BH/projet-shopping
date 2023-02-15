@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Main, Article, Category, Infos, Form, Label, Title, Price } from '../style/Home.styled' 
+import { Main, Article, Category, Infos, Form, Title, Price } from '../style/Home.styled' 
 import { Button } from '../style/Button.styled' 
 import { Input } from '../style/Input.styled' 
+import { Label } from '../style/Label.styled' 
 
 const Home = () => {
   const [products, setProducts] = useState([]);
