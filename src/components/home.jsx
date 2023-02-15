@@ -6,7 +6,7 @@ const Home = () => {
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(response => response.json())
-      .then(data => setProducts(data.slice(0, 4)));
+      .then(data => setProducts(data));
   }, []);
 
   return (

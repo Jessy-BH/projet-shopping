@@ -7,6 +7,13 @@ import Nav from './components/nav';
 
 
 function App() {
+
+  const checkTheme = () => {
+    const body = document.querySelector('body');
+    if (localStorage.getItem('dark-theme') === 'true') body.classList.add('dark-theme')
+  }
+  checkTheme();
+
   return (
     <div className="App">
       <BrowserRouter>
