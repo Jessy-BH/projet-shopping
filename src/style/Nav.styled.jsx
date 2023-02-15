@@ -27,10 +27,19 @@ export const Img = styled.img`
 `
 
 export const LiLink = styled.li`
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
+  :not(:last-child) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+
+    transition: background-color .3s ease-in-out;
+    &:hover {
+      background-color: var(--clr-orange-hover);
+    }
+  }
 `
 
 export const Btn = styled.button`
@@ -39,7 +48,7 @@ export const Btn = styled.button`
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
-
+  transition: background-color .3s ease-in-out;
   &:hover {
     background-color: var(--clr-orange-hover);
   }
