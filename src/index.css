@@ -39,3 +39,11 @@ body {
   align-items: center;
   gap: 5px;
 }
+
+.dark-theme Input {
+  background-color: var(--bg-black);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--clr-white);
+  color: var(--clr-white);
+}

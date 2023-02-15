@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Main, Article, Category, Infos, Form, Label, Title, Price } from '../style/Home.styled' 
+import { Button } from '../style/Button.styled' 
+import { Input } from '../style/Input.styled' 
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [qty, setQty] = useState(1);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -9,18 +13,32 @@ const Home = () => {
       .then(data => setProducts(data));
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  }
+
   return (
-    <div>
+    <Main>
       {products.map(product => (
-        <div key={product.id}>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <p>{product.category}</p>
-          <p>Price: ${product.price}</p>
+        <Article key={product.id}>
           <img src={product.image} alt={product.title} />
-        </div>
+          <Infos>
+            <Title>{product.title} <Category>{product.category}</Category></Title>
+            <p>{product.description}</p>
+            <Price>$ {product.price}</Price>
+
+            <Form onSubmit={handleSubmit}>
+              <Label>
+                Quantity : 
+                <Input width={'50px'} type="number" name="" id={product.id} min={1} defaultValue='1' onChange={(e) => { if(e.target.value === '') e.target.value = '1' }} />
+              </Label>
+              <Button type="submit">Add to basket</Button>
+            </Form>
+          </Infos>
+        </Article>
       ))}
-    </div>
+    </Main>
   );
 }
 
