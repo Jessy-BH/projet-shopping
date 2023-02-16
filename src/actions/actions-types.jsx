@@ -1,5 +1,4 @@
-import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, DELETE_CART } from '../constants/actions';
-import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, SET_USER } from '../constants/actions';
+import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, DELETE_CART, SET_USER } from '../constants/actions';
 
 export const addItem = payload => {
     return{

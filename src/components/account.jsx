@@ -11,7 +11,7 @@ import { Label } from '../style/Label.styled'
 
 const Account = () => {
   
-  const {user} = useSelector(state => state);
+  const {user} = useSelector(state => state.userReducer);
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -31,15 +31,15 @@ const Account = () => {
       <Form onSubmit={handleSubmit} >
         <Label>
           Your firstname : 
-          <Input onChange={handleChange} type="text" name="name" value={name} />
+          <Input onChange={handleChange} type="text" name="name" value={user.name} />
         </Label>
         <Label>
           Your lastname : 
-          <Input onChange={handleChange} type="text" name="lastname" value={lastname}/>
+          <Input onChange={handleChange} type="text" name="lastname" value={user.lastname}/>
         </Label>
         <Label>
           Your email : 
-          <Input onChange={handleChange} type="text" name="email"  value={email}/>
+          <Input onChange={handleChange} type="text" name="email"  value={user.email}/>
         </Label>
         <Button type="submit">Save</Button>
       </Form>

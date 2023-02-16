@@ -17,7 +17,7 @@ const stateInit = {
     
 }
 
-export const reducerCart = (state = stateInit, action = {}) => {
+const reducerCart = (state = stateInit, action = {}) => {
 
     const {items, item} = state;
 
@@ -55,3 +55,5 @@ export const reducerCart = (state = stateInit, action = {}) => {
             return state;
     }
 }
+
+export default reducerCart;

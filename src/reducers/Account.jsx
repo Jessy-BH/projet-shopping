@@ -1,4 +1,4 @@
-import { SET_USER } from "../constantes/actions";
+import { SET_USER } from "../constants/actions";
 
 let stateInit = {
     user: [{name: 'maxime', lastname:'guilbaud', email : 'maxime@gmail.com'}   

@@ -1,9 +1,9 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Account from './components/Account';
-import Cart from './components/Cart';
-import Home from './components/Home';
-import Nav from './components/Nav';
+import Account from './components/account';
+import Cart from './components/cart';
+import Home from './components/home';
+import Nav from './components/nav';
 
 
 function App() {
