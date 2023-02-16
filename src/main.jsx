@@ -8,7 +8,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 
-const store = createStore(reducerCart);
+const store = createStore(reducer);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

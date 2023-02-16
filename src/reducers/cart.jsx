@@ -1,26 +1,57 @@
-import React from 'react'
+// import React from 'react';
+import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM, DELETE_CART } from '../constants/actions';
 
 const stateInit = {
-    id: '3',
-    title: 't-shirt',
-    image: 'url string lien',
-    category: "men's clothing",
-    description: 'blahblahblah',
-    price: '250.00',
-    quantity: 0,
+    items: [
+        {
+            id: '3',
+            title: 't-shirt',
+            image: 'url string lien',
+            category: "men's clothing",
+            description: 'blahblahblah',
+            price: '250.00',
+            quantity: 0,
+        },
+    ],
+    itemsQuantity: 0,
+    
 }
 
 export const reducerCart = (state = stateInit, action = {}) => {
+
     const {items, item} = state;
 
     switch(action.type){
-        // case ADD_ITEM:
+        case ADD_ITEM:
 
-        // case UPDATE_ITEM:
+            return {
+                ...state,
+                items: items.concat(item),
+                quantity: state.quantity +1,
+                itemsQuantity: state.itemsQuantity +1,
+            }
 
-        // case DELETE_ITEM:
+        case UPDATE_ITEM:
 
-        // default:
-            // return state;
+            return {
+                ...state,
+                quantity: state.quantity -1,
+                itemsQuantity: state.itemsQuantity -1,
+            }
+
+        case DELETE_ITEM:
+
+            const itemDelete = action.payload;
+            
+            return {
+                ...state,
+                items: items.filter(item => item !== itemDelete),
+                itemsQuantity: state.itemsQuantity -1,
+            }
+
+        // case DELETE_CART:
+
+        default:
+            return state;
     }
 }
