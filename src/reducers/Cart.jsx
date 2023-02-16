@@ -57,13 +57,13 @@ const reducerCart = (state = stateInit, action = {}) => {
                 itemsQuantity: state.itemsQuantity -1,
             }
 
-        // case DELETE_CART:
+        case DELETE_CART:
 
-        //     return {
-        //         ...state,
-        //         items: ,
-        //         itemsQuantity: 0,
-        //     }
+            return {
+                ...state,
+                items: [],
+                itemsQuantity: 0,
+            }
 
         default:
             return state;

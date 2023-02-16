@@ -23,24 +23,20 @@ const Cart = () => {
     <div>
       <p>Hi {user.name} !</p>
       <p>There are {itemsQuantity} items in your cart</p>
-      {/* {itemsQuantity} */}
       <Button onClick={() => handleClear(items)}>Clear cart</Button>
-      {/* DELETE_CART */}
-      <ul>
-        {items.map((item, i) =>
-          <li key={i}>
-            {item.title}
-            {item.category}
-            {item.price}
-            {item.image}
-            {item.description}
-            <input type="text" defaultValue={item.quantity}/>
-
-            <Button onClick={() => handleDelete(item)}>Remove</Button>
-          </li>
-        )}
-      </ul>
-      {/* DELETE_ITEM */}
+        <ul>
+          {items.map((item, i) =>
+            <li key={i}>
+              {item.title}
+              {item.category}
+              {item.price}
+              {item.image}
+              {item.description}
+              <input type="text" defaultValue={item.quantity}/>
+              <Button onClick={() => handleDelete(item)}>Remove</Button>
+            </li>
+          )}
+        </ul>
     </div>
   )
 }
