@@ -19,6 +19,16 @@ const Cart = () => {
     dispatch(deleteCart(items));
   }
 
+  const handleChange = e => {
+    const{itemsQuantity, value} = e.target;
+    dispatch(updateItem({itemsQuantity, value}));
+  }
+
+  // const handleInput = e => {
+  //   e.preventDefault();
+  //   dispatch(updateItem());
+  // }
+
   return (
     <div>
       <p>Hi {user.name} !</p>
@@ -32,7 +42,7 @@ const Cart = () => {
               {item.price}
               {item.image}
               {item.description}
-              <input type="text" defaultValue={item.quantity}/>
+              <input type="text" onChange={handleChange} defaultValue={item.quantity}/>
               <Button onClick={() => handleDelete(item)}>Remove</Button>
             </li>
           )}
