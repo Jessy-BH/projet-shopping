@@ -9,7 +9,7 @@ const stateInit = {
             category: "men's clothing",
             description: 'blahblahblah',
             price: '250.00',
-            quantity: 0,
+            quantity: 1,
         },
         {
             id: '5',
@@ -18,10 +18,10 @@ const stateInit = {
             category: "men's clothing",
             description: 'blahblahblah',
             price: '250.00',
-            quantity: 0,
+            quantity: 5,
         },
     ],
-    itemsQuantity: 0,
+    itemsQuantity: 2,
     
 }
 
@@ -58,6 +58,12 @@ const reducerCart = (state = stateInit, action = {}) => {
             }
 
         // case DELETE_CART:
+
+        //     return {
+        //         ...state,
+        //         items: ,
+        //         itemsQuantity: 0,
+        //     }
 
         default:
             return state;
