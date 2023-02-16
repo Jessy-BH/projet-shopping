@@ -7,7 +7,7 @@ import { Button } from '../style/Button.styled';
 
 const Cart = () => {
 
-  const {items} = useSelector(state => state.itemReducer);
+  const {items, itemsQuantity} = useSelector(state => state.itemReducer);
   const {user} = useSelector(state => state.userReducer);
   const dispatch = useDispatch();
 
@@ -19,31 +19,34 @@ const Cart = () => {
     dispatch(deleteCart(items));
   }
 
+  const handleChange = e => {
+    const{itemsQuantity, value} = e.target;
+    dispatch(updateItem({itemsQuantity, value}));
+  }
+
+  // const handleInput = e => {
+  //   e.preventDefault();
+  //   dispatch(updateItem());
+  // }
+
   return (
     <div>
       <p>Hi {user.name} !</p>
-      {/* {userName} */}
-      <p>There are {items.length} items in your cart</p>
-      {/* {itemsQuantity} */}
+      <p>There are {itemsQuantity} items in your cart</p>
       <Button onClick={() => handleClear(items)}>Clear cart</Button>
-      {/* DELETE_CART */}
-      {/* <Item /> */}
-      {/* <p>{items[0].title}</p> */}
-      <ul>
-        {items.map((item, i) =>
-          <li key={i}>
-            {item.title}
-            {item.category}
-            {item.price}
-            {item.image}
-            {item.description}
-            {item.quantity}
-
-            <Button onClick={() => handleDelete(item[i])}>Remove</Button>
-          </li>
-        )}
-      </ul>
-      {/* DELETE_ITEM */}
+        <ul>
+          {items.map((item, i) =>
+            <li key={i}>
+              {item.title}
+              {item.category}
+              {item.price}
+              {item.image}
+              {item.description}
+              <input type="text" onChange={handleChange} defaultValue={item.quantity}/>
+              <Button onClick={() => handleDelete(item)}>Remove</Button>
+            </li>
+          )}
+        </ul>
     </div>
   )
 }
