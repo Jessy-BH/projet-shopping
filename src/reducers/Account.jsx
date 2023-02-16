@@ -1,16 +1,16 @@
 import { SET_USER } from "../constants/actions";
 
 let stateInit = {
-    user: [{name: 'maxime', lastname:'guilbaud', email : 'maxime@gmail.com'}   
-    ],
-    name: '',
+    user: {name: 'maxime', lastname:'guilbaud', email : 'maxime@gmail.com'}   
+    ,
+    name: 'alan',
     lastname: '',
     email: ''
 }
 
 let reducerUser = (state = stateInit, action = {}) => {
     
-    const {user,name, lastname, email } = state;
+    const {user, name} = state;
     
     switch(action.type){
         case SET_USER:

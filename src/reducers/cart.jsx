@@ -12,6 +12,15 @@ const stateInit = {
             price: '250.00',
             quantity: 0,
         },
+        {
+            id: '5',
+            title: 'pantalon',
+            image: 'url string lien',
+            category: "men's clothing",
+            description: 'blahblahblah',
+            price: '250.00',
+            quantity: 0,
+        },
     ],
     itemsQuantity: 0,
     

@@ -28,15 +28,21 @@ const Cart = () => {
       <Button onClick={() => handleClear(items)}>Clear cart</Button>
       {/* DELETE_CART */}
       {/* <Item /> */}
-      <p>{items.title}</p>
-      {/* <ul>
+      {/* <p>{items[0].title}</p> */}
+      <ul>
         {items.map((item, i) =>
           <li key={i}>
-            {item}
-            <Button onClick={() => handleDelete(item)}>Remove</Button>
+            {item.title}
+            {item.category}
+            {item.price}
+            {item.image}
+            {item.description}
+            {item.quantity}
+
+            <Button onClick={() => handleDelete(item[i])}>Remove</Button>
           </li>
         )}
-      </ul> */}
+      </ul>
       {/* DELETE_ITEM */}
     </div>
   )

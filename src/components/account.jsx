@@ -31,15 +31,15 @@ const Account = () => {
       <Form onSubmit={handleSubmit} >
         <Label>
           Your firstname : 
-          <Input onChange={handleChange} type="text" name="name" value={user.name} />
+          <Input onChange={handleChange} type="text" name="name" defaultValue={user.name} />
         </Label>
         <Label>
           Your lastname : 
-          <Input onChange={handleChange} type="text" name="lastname" value={user.lastname}/>
+          <Input onChange={handleChange} type="text" name="lastname" defaultValue={user.lastname}/>
         </Label>
         <Label>
           Your email : 
-          <Input onChange={handleChange} type="text" name="email"  value={user.email}/>
+          <Input onChange={handleChange} type="text" name="email"  defaultValue={user.email}/>
         </Label>
         <Button type="submit">Save</Button>
       </Form>
