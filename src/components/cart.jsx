@@ -23,7 +23,7 @@ const Cart = () => {
     <div>
       <p>Hi {user.name} !</p>
       {/* {userName} */}
-      <p>There are 0 items in your cart</p>
+      <p>There are {items.length} items in your cart</p>
       {/* {itemsQuantity} */}
       <Button onClick={() => handleClear(items)}>Clear cart</Button>
       {/* DELETE_CART */}
