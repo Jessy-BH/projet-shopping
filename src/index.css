@@ -47,3 +47,7 @@ body {
   border-color: var(--clr-white);
   color: var(--clr-white);
 }
+
+.dark-theme Section {
+  border-bottom: 1px solid var(--bg-white);
+}

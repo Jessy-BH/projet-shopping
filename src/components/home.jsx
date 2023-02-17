@@ -6,7 +6,6 @@ import { Label } from '../style/Label.styled'
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [qty, setQty] = useState(1);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
