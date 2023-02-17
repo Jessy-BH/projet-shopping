@@ -34,9 +34,7 @@ const reducerCart = (state = stateInit, action = {}) => {
 
             return {
                 ...state,
-                items: items.concat(item),
-                quantity: state.quantity +1,
-                itemsQuantity: state.itemsQuantity +1,
+                items: items.push(item)
             }
 
         case UPDATE_ITEM:
